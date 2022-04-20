@@ -63,11 +63,26 @@ class Play extends Phaser.Scene {
         }
         this.scoreLeft = this.add.text(borderUISize + borderPadding, borderUISize + borderPadding*2, this.p1Score, scoreConfig);
 
+        let TimerConfig = {
+            fontFamily: 'Impact',
+            fontSize: '28px',
+            backgroundColor: '#858183',
+            color: '#300A10',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+
         // GAME OVER flag
         this.gameOver = false;
 
         // 60-second play clock
         scoreConfig.fixedWidth = 0;
+        this.countdown;
+        this.timer = this.add.text(borderUISize + borderPadding*40, borderUISize + borderPadding*2, 'Time: ' + this.countdown, TimerConfig);
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
             this.add.text(game.config.width/2, game.config.height/2, 'GAME OVER', scoreConfig).setOrigin(0.5);
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← for Menu', scoreConfig).setOrigin(0.5);
@@ -85,6 +100,8 @@ class Play extends Phaser.Scene {
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
             this.scene.start("menuScene");
         }
+        // display timer
+        this.timer.text = 'Time: ' + this.clock.getRemainingSeconds().toFixed(0);
 
         this.skyline.tilePositionX -= 4;
         if (!this.gameOver) {

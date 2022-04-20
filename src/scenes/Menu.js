@@ -26,11 +26,12 @@ class Menu extends Phaser.Scene {
       }
       
       // show menu text
-      this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'SKY PATROL', menuConfig).setOrigin(0.5);
-      this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
+      this.add.text(game.config.width/2, game.config.height/2.5 - borderUISize - borderPadding, 'SKY PATROL: The Two Player Air Defense Game', menuConfig).setOrigin(0.5);
+      this.add.text(game.config.width/2, game.config.height/2.4, 'P1 Use ←→ arrows to move & (P) to fire', menuConfig).setOrigin(0.5);
+      this.add.text(game.config.width/2, game.config.height/2, 'P2 Use W & D to move & (F) to fire', menuConfig).setOrigin(0.5);
       menuConfig.backgroundColor = '#156F93';
       menuConfig.color = '#300A10';
-      this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
+      this.add.text(game.config.width/2, game.config.height/1.9 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
 
       // define keys
       keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
