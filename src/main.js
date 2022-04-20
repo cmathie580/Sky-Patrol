@@ -32,3 +32,7 @@ let keyP, keyLEFT, keyRIGHT, keyF, keyR, keyA, keyD;
 
 // The combination of the full redesign (60 points), the implementation of simultaneous two-player (30 points), and the visible
 // countdown feature (10 points), totals to 100 points for the grade.
+
+// Help
+// I was able to fully implement the countdown timer thanks to Denae:p on Discord. Who kindly shared the code necessary to display
+// the timer on the #code channel in the class discord server. 
